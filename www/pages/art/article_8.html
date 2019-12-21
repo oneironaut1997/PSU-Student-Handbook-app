@@ -1,0 +1,106 @@
+<template>
+<div class="page">
+	<div class="navbar">
+		<div class="navbar-inner sliding bg-color-psu">
+			<div class="left">
+				<a href="/articles/" class="link">
+					<i class="icon icon-back"></i>
+					<span class="ios-only"></span>
+				</a>
+
+
+			 	<div class="title sliding">Aritcle VIII</div>
+			</div>
+
+			<div class="right">
+				<a href="#" class="link icon-only panel-open" data-panel="right">
+                    <i class="icon f7-icons ios-only">more</i>
+                    <i class="icon material-icons md-only">menu</i>
+                </a>
+			</div>
+			
+		</div>
+	</div>
+
+
+
+	<div class="page-content bg-color-white">
+		<div class="fab fab-top-left fab-open color-theme-orange">
+                      <a href="#" class="">
+                        <i class="f7-icons">gear</i>
+                        <i class="icon material-icons md-only">close</i>
+                      </a>
+                      <div class="fab-buttons fab-buttons-bottom">
+                        <a href="#" class="fab-label-button active-state">
+                          <span style="font-size: 13px;">ENG</span>
+                          <span class="fab-label">ENGLISH</span>
+                        </a>
+                        <a href="/article_8_tag/" class="fab-label-button">
+                          <span style="font-size: 13px;">TAG</span>
+                          <span class="fab-label">TAGALOG</span>
+                        </a>
+
+                      </div>
+                    </div>
+		<div class="block">
+			<span class="edit" onclick="pwd()">edit</span>
+        <span class="save">save</span>
+        <div class="art8">
+		<div class="block-title"><strong>Medical and Dental Services</strong></div>
+		
+			<p>
+
+<b>Section 1.</b> The Medical - Dental Clinic of the University is presently located at the
+PSU - Main Campus, Lingayen, Pangasinan. It is manned by a University
+Physician, University Dentist, and a nurse. However some campuses of the
+University have their respective nursed to provide medical consultation and
+treatment daily at the clinic.<br><br>
+
+<b>Section 2.</b> First dosage of medicines is given free as long as stocks are available.
+Medical examination of athletes is done prior to athletic events. The medical staff
+also attends to emergencies encountered during sports competitions. Dental
+extractions and prophylaxis are included in the dental services.
+
+
+			</p>	
+		</div>
+</div>
+		<div class="block">
+			<p class="segmented">
+
+				<a href="/article_7/" class="button button-outline button-active color-blue">Previous</a>
+
+				<a href="/" class="button button-outline button-active color-red" onclick="window.location.reload();">Home</a>
+
+				<a href="/article_9/" class="button button-outline button-active color-blue">Next</a>        
+		    </p>
+		</div>
+
+		
+	
+
+</div>
+</template>
+<script>
+  // script must return component object
+  return {
+    on: {
+      pageInit: function () {
+        // do something on page init
+        var theContent11 = $('.art8');// set the content
+
+	$('.save').on('click', function(){ // store the new content in localStorage when the button is clicked
+		var editedContent11 	= theContent11.html();
+		localStorage.newContent11 = editedContent11;
+	});
+
+	if(localStorage.getItem('newContent11')) { // apply the newContent when it is exist ini localStorage
+		theContent11.html(localStorage.getItem('newContent11'));
+	}
+      },
+      pageAfterOut: function () {
+        // page has left the view
+      },
+    }
+  }
+</script>
